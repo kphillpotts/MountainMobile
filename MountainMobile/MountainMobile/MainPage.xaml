@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MountainMobile.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    mc:Ignorable="d">
+
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <skia:SKCanvasView
+            x:Name="ImageSkiaCanvas"
+            HorizontalOptions="Fill"
+            PaintSurface="ImageSkiaCanvas_PaintSurface"
+            VerticalOptions="Fill" />
+
+
+        <Image
+            Margin="30"
+            HorizontalOptions="Start"
+            Source="mountain_icon"
+            VerticalOptions="Start" />
+
+        <Image
+            Margin="30"
+            HorizontalOptions="End"
+            Source="hamburger"
+            VerticalOptions="Start" />
+
+        <BoxView Grid.Row="1" Color="White" />
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="140" />
+            </Grid.RowDefinitions>
+
+            <Label
+                x:Name="Heading1"
+                Style="{StaticResource Header}"
+                Text="Öræfajökull" />
+
+            <Label
+                x:Name="Body1"
+                Grid.Row="1"
+                Style="{StaticResource Body}"
+                Text="Öræfajökull is located at the southern extremity of the Vatnajökull glacier and overlooking the Ring Road between Höfn and Vík." />
+
+            <Label
+                x:Name="Heading2"
+                Opacity="0"
+                Style="{StaticResource Header}"
+                Text="Thórsmörk" />
+
+            <Label
+                x:Name="Body2"
+                Grid.Row="1"
+                Opacity="0"
+                Style="{StaticResource Body}"
+                Text="Thórsmörk is a mountain ridge in Iceland that was named after the Norse god Thor (Þór). It is situated in the south of Iceland between the glaciers Tindfjallajökull and Eyjafjallajökull." />
+
+
+        </Grid>
+
+        <Grid.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Left" Swiped="SwipeGestureRecognizer_Swiped" />
+        </Grid.GestureRecognizers>
+
+
+    </Grid>
+
+</ContentPage>

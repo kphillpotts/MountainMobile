@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MountainMobile.Pages;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace MountainMobile
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new SlideShowPage();
         }
 
         protected override void OnStart()

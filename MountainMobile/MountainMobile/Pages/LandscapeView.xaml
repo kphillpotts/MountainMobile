@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="MountainMobile.Pages.LandscapeView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:rainbows="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows"
+    xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    mc:Ignorable="d">
+
+    <Grid rainbows:DebugRainbow.IsDebug="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <skia:SKCanvasView
+            x:Name="ImageSkiaCanvas"
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="2"
+            BackgroundColor="LightBlue"
+            HorizontalOptions="Fill"
+            PaintSurface="SKCanvasView_PaintSurface"
+            VerticalOptions="Fill" />
+
+        <BoxView
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="0"
+            BackgroundColor="White" />
+
+        <StackLayout
+            Grid.Row="1"
+            HorizontalOptions="End"
+            Orientation="Horizontal"
+            Spacing="0"
+            TranslationX="40">
+
+            <BoxView
+                HeightRequest="40"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                WidthRequest="40"
+                Color="LightGreen">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </BoxView.GestureRecognizers>
+            </BoxView>
+            <BoxView
+                HeightRequest="40"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                WidthRequest="40"
+                Color="Orange">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </BoxView.GestureRecognizers>
+            </BoxView>
+        </StackLayout>
+
+        <Label
+            x:Name="Heading1"
+            Grid.ColumnSpan="2"
+            FontSize="60"
+            Style="{StaticResource Header}"
+            Text="Öræfajökull"
+            VerticalOptions="End" />
+
+        <Label
+            x:Name="Body1"
+            Grid.Row="1"
+            FontSize="10"
+            Style="{StaticResource Body}"
+            Text="Öræfajökull is located at the southern extremity of the Vatnajökull glacier and overlooking the Ring Road between Höfn and Vík." />
+
+
+
+    </Grid>
+
+</ContentView>

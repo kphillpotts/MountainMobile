@@ -16,6 +16,12 @@ namespace MountainMobile.ViewModels
             SetProperty(ref currentIndex, currentIndex);
         }
 
+        public void MovePrevious()
+        {
+            currentIndex = GetPreviousIndex();
+            SetProperty(ref currentIndex, currentIndex);
+        }
+
         public LocationModel CurrentLocation
         {
             get
@@ -30,7 +36,14 @@ namespace MountainMobile.ViewModels
             {
                 return LocationPages[GetNextIndex()];
             }
+        }
 
+        public LocationModel PreviousLocation
+        {
+            get
+            {
+                return LocationPages[GetPreviousIndex()];
+            }
         }
 
         private int GetNextIndex()
@@ -40,6 +53,15 @@ namespace MountainMobile.ViewModels
                 nextIndex = 0;
 
             return nextIndex;
+        }
+
+        private int GetPreviousIndex()
+        {
+            var previousIndex = currentIndex - 1;
+            if (previousIndex < 0)
+                previousIndex = Location.LocationPages.Count - 1;
+
+            return previousIndex;
         }
 
 

@@ -32,5 +32,14 @@
             <Setter Property="TextColor" Value="#707070" />
             <Setter Property="Margin" Value="35,0,35,35" />
         </Style>
+
+
+        <Style x:Key="Menu" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource BodyFont}" />
+            <Setter Property="FontSize" Value="8" />
+            <Setter Property="TextColor" Value="White" />
+        </Style>
+
+
     </Application.Resources>
 </Application>

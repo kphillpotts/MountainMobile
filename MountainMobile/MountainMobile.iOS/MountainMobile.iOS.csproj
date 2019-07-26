@@ -157,4 +157,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\mountain_icon%403x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mountain_icon_landscape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mountain_icon_landscape%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mountain_icon_landscape%402x.png" />
+  </ItemGroup>
 </Project>

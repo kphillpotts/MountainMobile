@@ -9,9 +9,12 @@
     xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
     mc:Ignorable="d">
 
-    <Grid rainbows:DebugRainbow.IsDebug="False">
+    <Grid
+        rainbows:DebugRainbow.IsDebug="False"
+        ColumnSpacing="0"
+        RowSpacing="0">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="225" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -23,60 +26,80 @@
             x:Name="ImageSkiaCanvas"
             Grid.RowSpan="2"
             Grid.ColumnSpan="2"
-            BackgroundColor="LightBlue"
+            BackgroundColor="White"
             HorizontalOptions="Fill"
             PaintSurface="SKCanvasView_PaintSurface"
             VerticalOptions="Fill" />
 
-        <BoxView
+        <skia:SKCanvasView
+            x:Name="SideBarCanvas"
             Grid.Row="0"
             Grid.RowSpan="2"
-            Grid.Column="0"
-            BackgroundColor="White" />
+            EnableTouchEvents="True"
+            PaintSurface="SideBarCanvas_PaintSurface"
+            Touch="SideBarCanvas_Touch" />
 
-        <StackLayout
-            Grid.Row="1"
-            HorizontalOptions="End"
-            Orientation="Horizontal"
-            Spacing="0"
-            TranslationX="40">
+        <Image
+            Margin="15,10"
+            HorizontalOptions="Start"
+            Source="mountain_icon_landscape"
+            VerticalOptions="Start" />
 
-            <BoxView
-                HeightRequest="40"
-                HorizontalOptions="End"
-                VerticalOptions="Start"
-                WidthRequest="40"
-                Color="LightGreen">
-                <BoxView.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-                </BoxView.GestureRecognizers>
-            </BoxView>
-            <BoxView
-                HeightRequest="40"
-                HorizontalOptions="End"
-                VerticalOptions="Start"
-                WidthRequest="40"
-                Color="Orange">
-                <BoxView.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-                </BoxView.GestureRecognizers>
-            </BoxView>
-        </StackLayout>
+        <BoxView
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="-70,0,-30,0"
+            HeightRequest="1.5"
+            HorizontalOptions="Fill"
+            VerticalOptions="End"
+            Color="#999999" />
 
         <Label
             x:Name="Heading1"
             Grid.ColumnSpan="2"
             FontSize="60"
             Style="{StaticResource Header}"
-            Text="Öræfajökull"
             VerticalOptions="End" />
 
         <Label
             x:Name="Body1"
             Grid.Row="1"
+            Margin="30,30,70,0"
             FontSize="10"
-            Style="{StaticResource Body}"
-            Text="Öræfajökull is located at the southern extremity of the Vatnajökull glacier and overlooking the Ring Road between Höfn and Vík." />
+            InputTransparent="True"
+            Style="{StaticResource Body}" />
+
+        <Label
+            x:Name="Heading2"
+            Grid.ColumnSpan="2"
+            FontSize="60"
+            Opacity="0"
+            Style="{StaticResource Header}"
+            VerticalOptions="End" />
+
+        <Label
+            x:Name="Body2"
+            Grid.Row="1"
+            Margin="30,30,70,0"
+            FontSize="10"
+            InputTransparent="True"
+            Opacity="0"
+            Style="{StaticResource Body}" />
+
+        <StackLayout
+            Grid.Column="1"
+            Padding="12"
+            HorizontalOptions="End"
+            Orientation="Horizontal"
+            Spacing="12"
+            VerticalOptions="Start">
+
+            <Label Style="{StaticResource Menu}" Text="About" />
+            <Label Style="{StaticResource Menu}" Text="Locations" />
+            <Label Style="{StaticResource Menu}" Text="Bookings" />
+            <Label Style="{StaticResource Menu}" Text="Contact" />
+
+        </StackLayout>
 
 
 

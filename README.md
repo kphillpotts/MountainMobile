@@ -32,7 +32,7 @@ If you are so inclined you can watch me code this live, which is what I do on [m
 # Join me Live Coding
 I live code these UI Challenges over on Twitch, so please feel to join me there. Also feel free to smash the follow button and turn on notifications so you know when I'm doing more challenges.
 
-![https://twitch.tv/kymphillpotts](https://kymphillpotts.com/assets/images/twitch_banner.png)
+[![Kym's Twitch Channel](https://kymphillpotts.com/assets/images/twitch_banner.png)](https://twitch.tv/kymphillpotts)
 
 Also, if you have designs you think might be interesting to implement feel free to shoot them through to me on twitter [@kphillpotts](https://twitter.com/kphillpotts).
 
